@@ -1,3 +1,5 @@
+package com.cgm.figurepiane
+
 import org.junit.Test
 import kotlin.test.fail
 
