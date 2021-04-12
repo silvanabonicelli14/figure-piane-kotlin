@@ -1,3 +1,3 @@
 package com.cgm.figurepiane.entities
 
-data class Square(val base: Double?): Rectangle(base, base)
+class Square(base: Double?): Shape(base, base)

@@ -1,13 +1,12 @@
 package com.cgm.figurepiane.entities
 
-import com.cgm.figurepiane.interfaces.Shape
+import com.cgm.figurepiane.interfaces.IShape
+import kotlin.math.pow
 
-data class Circle(val radius: Double?) : Shape {
+class Circle(private val radius: Double?) : IShape {
     private val pi = 3.14
+
     override fun getArea(): Double? {
-        return when {
-            radius != null -> (radius * radius) * pi
-            else -> null
-        }
+        return radius?.let { (radius.pow(2)).times(pi)}
     }
 }

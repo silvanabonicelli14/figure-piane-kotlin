@@ -1,5 +1,5 @@
 package com.cgm.figurepiane.interfaces
 
-interface Shape {
+interface IShape {
     fun getArea(): Double?
 }
