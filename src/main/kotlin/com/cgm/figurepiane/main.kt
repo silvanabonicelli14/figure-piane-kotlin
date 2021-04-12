@@ -1,15 +1,17 @@
 package com.cgm.figurepiane
 
+import com.cgm.figurepiane.services.InputService
+import com.cgm.figurepiane.services.ShapePrinterService
+
 fun main() {
 
-    val radius = 1.0
-    val base = 1.0
-    val height = 3.0
+    val inputService = InputService()
+    val radius = inputService.getValueFromCommandLine("radius")?.toDoubleOrNull()
+    val base = inputService.getValueFromCommandLine("base")?.toDoubleOrNull()
+    val height = inputService.getValueFromCommandLine("height")?.toDoubleOrNull()
 
-    println(ShapePrinter().printCircleArea(radius))
-    println(ShapePrinter().printRectangleArea(base,height))
-    println(ShapePrinter().printSquareArea(base))
-    println(ShapePrinter().printTriangleArea(base,height))
+    println("Circle's area is ${ShapePrinterService().printCircleArea(radius)}")
+    println("Rectangle's area is ${ShapePrinterService().printRectangleArea(base,height)}")
+    println("Square's area is ${ShapePrinterService().printSquareArea(base)}")
+    println("Triangle's area is ${ShapePrinterService().printTriangleArea(base,height)}")
 }
-
-
