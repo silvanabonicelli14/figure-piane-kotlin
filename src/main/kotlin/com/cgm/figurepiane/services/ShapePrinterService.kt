@@ -1,13 +1,10 @@
 package com.cgm.figurepiane.services
 
-import com.cgm.figurepiane.entities.Circle
-import com.cgm.figurepiane.entities.Rectangle
-import com.cgm.figurepiane.entities.Square
-import com.cgm.figurepiane.entities.Triangle
+import com.cgm.figurepiane.interfaces.IShape
 
 class ShapePrinterService {
-    fun printRectangleArea(base: Double?, height: Double?): Double? = Rectangle(base,height).getArea()
-    fun printSquareArea(base: Double?): Double? = Square(base).getArea()
-    fun printTriangleArea(base: Double?, height: Double?): Double? = Triangle(base,height).getArea()
-    fun printCircleArea(radius: Double?): Double? = Circle(radius).getArea()
+
+    fun <T> printAreaOf(figure: T): Double? where T : IShape {
+          return figure.getArea()
+    }
 }

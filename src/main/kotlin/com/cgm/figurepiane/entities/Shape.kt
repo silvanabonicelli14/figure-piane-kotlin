@@ -1,7 +1,6 @@
 package com.cgm.figurepiane.entities
 
 import com.cgm.figurepiane.interfaces.IShape
-import kotlin.math.pow
 
 open class Shape(private val base: Double?, private val height: Double?, private val divisor: Int = 1) : IShape {
     override fun getArea(): Double? {
