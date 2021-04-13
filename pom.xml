@@ -8,6 +8,7 @@
     <groupId>com.cgm.figurepiane</groupId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
+    <name>Calcolatore area di figure piane</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
