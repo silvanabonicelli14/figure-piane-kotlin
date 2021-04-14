@@ -4,8 +4,7 @@ import com.cgm.figurepiane.entities.Circle
 import com.cgm.figurepiane.entities.Rectangle
 import com.cgm.figurepiane.entities.Square
 import com.cgm.figurepiane.entities.Triangle
-import getValueFromCommandLine
-import printShapeArea
+import com.cgm.figurepiane.utilities.getValueFromCommandLine
 
 
 fun main() {
@@ -15,9 +14,9 @@ fun main() {
     val base = getValueFromCommandLine("base")?.toDoubleOrNull()
     val height = getValueFromCommandLine("height")?.toDoubleOrNull()
 
-//    println("Circle's area is ${printShapeArea(Circle(radius))}")
-//    println("Rectangle's area is ${printShapeArea(Rectangle(base, height))}")
-//    println("Square's area is ${printShapeArea(Square(base))}")
-//    println("Triangle's area is ${printShapeArea(Triangle(base, height))}")
+    if (radius != null) println("Circle's area is ${Circle(radius).calculateArea()}")
+    if (base != null && height != null) println("Rectangle's area is ${Rectangle(base, height).calculateArea()}")
+    if (base != null) println("Square's area is ${Square(base).calculateArea()}")
+    if (base != null && height != null) println("Triangle's area is ${Triangle(base, height).calculateArea()}")
 }
 

@@ -1,8 +1,8 @@
 package com.cgm.figurepiane.interfaces
 
-import Errors
+import com.cgm.figurepiane.utilities.Errors
 
 interface IShape {
-    fun getArea(): Double
-    fun calculateArea(): Errors
+    fun calculateArea(): Double
+    fun checkValues(): Errors
 }

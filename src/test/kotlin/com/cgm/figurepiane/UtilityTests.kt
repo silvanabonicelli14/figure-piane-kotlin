@@ -5,7 +5,7 @@ import com.cgm.figurepiane.utilities.printShapeArea
 import org.junit.Assert
 import org.junit.Test
 
-class MainTest {
+class UtilityTests {
 
     private var radius: Double = 2.5
     private var base: Double = 1.0
@@ -15,52 +15,52 @@ class MainTest {
     fun printRectangleNonValidValues_ThrowsException() {
         base= (-12).toDouble()
         height = (-12).toDouble()
-        Rectangle(base,height).printArea()
+        printShapeArea(Rectangle(base,height))
     }
 
     @Test
     fun printRectangle_HappyPath() {
         val expectedArea = 3.0
-        val area = Rectangle(base,height).printArea()
+        val area = printShapeArea(Rectangle(base,height))
         Assert.assertTrue(expectedArea == area)
     }
 
     @Test(expected = IllegalStateException::class)
     fun printSquareNonValidValues_ThrowsException() {
         base= (-12).toDouble()
-        Square(base).printArea()
+        printShapeArea(Square(base))
     }
 
     @Test
     fun printSquare_HappyPath() {
         val expectedArea = 1.0
-        val area = Square(base).printArea()
+        val area = printShapeArea(Square(base))
         Assert.assertTrue(expectedArea == area)
     }
 
     @Test(expected = IllegalStateException::class)
     fun printTriangleNonValidValues_ThrowsException() {
         base= (-12).toDouble()
-        Triangle(base,height).printArea()
+        printShapeArea(Triangle(base,height))
     }
 
     @Test
     fun printTriangle_HappyPath() {
         val expectedArea = 1.5
-        val area = Triangle(base,height).printArea()
+        val area = printShapeArea(Triangle(base,height))
         Assert.assertTrue(expectedArea == area)
     }
 
     @Test(expected = IllegalStateException::class)
     fun printCircleNonValidValues_ThrowsException() {
         radius = (-12).toDouble()
-        Circle(radius).printArea()
+        printShapeArea(Circle(radius))
     }
 
     @Test
     fun printCircle_HappyPath() {
         val expectedArea = 19.625
-        val area = Circle(radius).printArea()
+        val area = printShapeArea(Circle(radius))
         Assert.assertTrue(expectedArea == area)
     }
 
@@ -71,7 +71,7 @@ class MainTest {
             Square(2.0),
             Triangle(3.0,2.0)
         )
-        shapes.map { it.printArea() }
+        printAllShapes(shapes)
     }
 
     @Test
@@ -81,6 +81,6 @@ class MainTest {
             Square(2.0),
             Triangle(3.0,2.0)
         )
-        Assert.assertEquals(listOf(8.0,4.0,3.0), shapes.map { it.printArea() })
+        Assert.assertEquals(listOf(8.0,4.0,3.0),printAllShapes(shapes))
     }
 }
