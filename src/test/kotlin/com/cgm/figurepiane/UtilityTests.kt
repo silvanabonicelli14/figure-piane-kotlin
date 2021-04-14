@@ -5,6 +5,7 @@ import com.cgm.figurepiane.utilities.printShapeArea
 import org.junit.Assert
 import org.junit.Test
 
+
 class UtilityTests {
 
     private var radius: Double = 2.5
@@ -66,7 +67,7 @@ class UtilityTests {
 
     @Test(expected = IllegalStateException::class)
     fun printAllShapes_ThrowException(){
-        val shapes: List<Shape> = listOf<Shape>(
+        val shapes: List<Shape> = listOf(
             Rectangle(-2.0,4.0),
             Square(2.0),
             Triangle(3.0,2.0)
@@ -76,7 +77,7 @@ class UtilityTests {
 
     @Test
     fun printAllShapes_HappyPath(){
-        val shapes: List<Shape> = listOf<Shape>(
+        val shapes: List<Shape> = listOf(
             Rectangle(2.0,4.0),
             Square(2.0),
             Triangle(3.0,2.0)

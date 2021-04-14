@@ -1,9 +1,8 @@
 package com.cgm.figurepiane
 import com.cgm.figurepiane.entities.*
-import com.cgm.figurepiane.utilities.printAllShapes
-import com.cgm.figurepiane.utilities.printShapeArea
 import org.junit.Assert
 import org.junit.Test
+import org.junit.jupiter.api.assertThrows
 
 class MainTest {
 
@@ -11,11 +10,11 @@ class MainTest {
     private var base: Double = 1.0
     private var height: Double = 3.0
 
-    @Test(expected = IllegalStateException::class)
+    @Test
     fun printRectangleNonValidValues_ThrowsException() {
         base= (-12).toDouble()
         height = (-12).toDouble()
-        Rectangle(base,height).printArea()
+        assertThrows<IllegalStateException>{Rectangle(base,height).printArea()}
     }
 
     @Test
@@ -29,6 +28,7 @@ class MainTest {
     fun printSquareNonValidValues_ThrowsException() {
         base= (-12).toDouble()
         Square(base).printArea()
+        assertThrows<IllegalStateException>{Square(base).printArea()}
     }
 
     @Test
@@ -38,10 +38,10 @@ class MainTest {
         Assert.assertTrue(expectedArea == area)
     }
 
-    @Test(expected = IllegalStateException::class)
+    @Test
     fun printTriangleNonValidValues_ThrowsException() {
         base= (-12).toDouble()
-        Triangle(base,height).printArea()
+        assertThrows<IllegalStateException>{ Triangle(base,height).printArea()}
     }
 
     @Test
@@ -51,10 +51,10 @@ class MainTest {
         Assert.assertTrue(expectedArea == area)
     }
 
-    @Test(expected = IllegalStateException::class)
+    @Test
     fun printCircleNonValidValues_ThrowsException() {
         radius = (-12).toDouble()
-        Circle(radius).printArea()
+        assertThrows<IllegalStateException>{ Circle(radius).printArea()}
     }
 
     @Test
@@ -64,19 +64,20 @@ class MainTest {
         Assert.assertTrue(expectedArea == area)
     }
 
-    @Test(expected = IllegalStateException::class)
+    @Test
     fun printAllShapes_ThrowException(){
-        val shapes: List<Shape> = listOf<Shape>(
+        val shapes: List<Shape> = listOf(
             Rectangle(-2.0,4.0),
             Square(2.0),
             Triangle(3.0,2.0)
         )
-        shapes.map { it.printArea() }
+
+        assertThrows<IllegalStateException>{shapes.map { it.printArea() }}
     }
 
     @Test
     fun printAllShapes_HappyPath(){
-        val shapes: List<Shape> = listOf<Shape>(
+        val shapes: List<Shape> = listOf(
             Rectangle(2.0,4.0),
             Square(2.0),
             Triangle(3.0,2.0)
