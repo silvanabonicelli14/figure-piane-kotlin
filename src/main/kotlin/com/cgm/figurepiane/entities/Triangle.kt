@@ -13,4 +13,5 @@ class Triangle(private val base: Double, private val height: Double): Shape() {
     override fun getArea(): Double {
         return (base * height).div(2)
     }
+    override val shapeName: String get() = "Triangle"
 }

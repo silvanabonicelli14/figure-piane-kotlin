@@ -12,7 +12,7 @@ fun getValueFromCommandLine(context: String): String? {
 fun <T:Shape> printShapeArea(figure: T): Double {
     return figure.printArea()
 }
-
+// Oppure alla vecchia:
 //fun <T> printShapeArea(figure: T): Double where T : Shape {
 //    return figure.printArea()
 //}
@@ -33,4 +33,28 @@ fun divide(a: Double, b: Double): Double {
     return a / b
 }
 
+//extension
+fun String.decorateAtTheEnd(decoratorChar: String):String {
+   var tmpString = this
+   return tmpString + decoratorChar
+}
+
 typealias Errors = List<String>
+
+data class myDataClass(val number: Int){
+    val secondNumber = 2
+
+    /*override fun toString(): String {
+        return "Ti ho fregato la stringa"
+    }
+
+    override fun hashCode(): Int {
+        return super.hashCode()
+    }
+
+    override fun equals(other: Any?): Boolean {
+        return super.equals(other)
+    }*/
+
+}
+

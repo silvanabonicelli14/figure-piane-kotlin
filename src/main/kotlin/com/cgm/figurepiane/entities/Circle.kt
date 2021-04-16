@@ -16,4 +16,7 @@ class Circle(private val radius: Double) : Shape() {
     override fun getArea(): Double {
         return radius.pow(2).times(pi)
     }
+
+    override val shapeName: String get() = "Circle"
 }
+

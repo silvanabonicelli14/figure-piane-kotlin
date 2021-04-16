@@ -14,5 +14,6 @@ open class Rectangle(private val base: Double, private val height: Double): Shap
             .apply { if (height < 0) this += "'height' field cannot accept negative value" }
             .toList()
     }
+    override val shapeName: String get() = "Rectangle"
 }
 

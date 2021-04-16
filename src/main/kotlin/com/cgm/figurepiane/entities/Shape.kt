@@ -3,7 +3,7 @@ package com.cgm.figurepiane.entities
 import com.cgm.figurepiane.interfaces.IShape
 import com.cgm.figurepiane.utilities.Errors
 
-abstract class Shape: IShape {
+abstract class  Shape: IShape {
 
     fun printArea(): Double {
         checkValues().takeIf { it.isNotEmpty() }?.let { error("Cannot calculate shape area: $it") }
