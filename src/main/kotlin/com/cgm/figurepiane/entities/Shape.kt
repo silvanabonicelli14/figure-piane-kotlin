@@ -9,5 +9,5 @@ abstract class Shape: IShape {
         checkValues().takeIf { it.isNotEmpty() }?.let { error("Cannot calculate shape area: $it") }
         return getArea()
     }
-    abstract fun checkValues(): Errors
+    protected abstract fun checkValues(): Errors
 }

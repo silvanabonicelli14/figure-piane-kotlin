@@ -24,7 +24,7 @@ class MainTest {
         Assert.assertTrue(expectedArea == area)
     }
 
-    @Test(expected = IllegalStateException::class)
+    @Test()
     fun printSquareNonValidValues_ThrowsException() {
         base= (-12).toDouble()
         Square(base).printArea()
