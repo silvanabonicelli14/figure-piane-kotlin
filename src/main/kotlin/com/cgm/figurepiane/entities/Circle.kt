@@ -13,7 +13,7 @@ class Circle(private val radius: Double) : Shape() {
             .toList()
     }
 
-    override fun calculateArea(): Double {
+    override fun getArea(): Double {
         return radius.pow(2).times(pi)
     }
 }

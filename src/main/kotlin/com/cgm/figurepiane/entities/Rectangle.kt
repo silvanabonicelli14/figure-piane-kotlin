@@ -4,7 +4,7 @@ import com.cgm.figurepiane.utilities.Errors
 
 open class Rectangle(private val base: Double, private val height: Double): Shape() {
 
-    override fun calculateArea(): Double {
+    override fun getArea(): Double {
         return  (base * height)
     }
 

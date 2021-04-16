@@ -10,7 +10,7 @@ class Triangle(private val base: Double, private val height: Double): Shape() {
             .apply { if (height < 0) this += "'height' field cannot accept negative value" }
             .toList()
     }
-    override fun calculateArea(): Double {
+    override fun getArea(): Double {
         return (base * height).div(2)
     }
 }

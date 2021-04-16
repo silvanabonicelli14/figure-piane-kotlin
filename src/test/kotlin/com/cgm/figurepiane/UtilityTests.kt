@@ -1,7 +1,6 @@
 package com.cgm.figurepiane
 import com.cgm.figurepiane.entities.*
-import com.cgm.figurepiane.utilities.printAllShapes
-import com.cgm.figurepiane.utilities.printShapeArea
+import com.cgm.figurepiane.utilities.*
 import org.junit.Assert
 import org.junit.Test
 
