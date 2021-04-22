@@ -27,8 +27,7 @@ class MainTest {
     @Test()
     fun printSquareNonValidValues_ThrowsException() {
         base= (-12).toDouble()
-        Square(base).printArea()
-        assertThrows<IllegalStateException>{Square(base).printArea()}
+        assertThrows<Exception>{Square(base).printArea()}
     }
 
     @Test
